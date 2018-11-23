@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/stylesheets/main.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Fugaz+One|Lato:300,400,700|Open+Sans:300,400,700" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+    <!-- JQuery -->
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+    <!-- Custom JS -->
+    <script type="text/javascript" src="/assets/js/main.js"></script>
+
+    <title>To-Do List</title>
+  </head>
+  <body>
+    <nav class="">
+      <a href="/">Home</a>
+      <a href="https://github.com/jddelia">Github</a>
+    </nav>
+
+    <header>
+      <h1>
+        <a href="/"><span class="title">Do It!</span></a>
+      </h1>
+      <h3 class="subTitle">To-Do List</h3>
+    </header>
+
+    <div class="formField">
+      <form class="" action="/" method="post">
+        <input type="text" name="taskInput" placeholder="Enter task here..." required>
+        <a><input type="submit" name="addTask" value="Add">
+      </form>
+    </div>
+
+    <div>
+      <% for (let i = 0; i < tasks.length; i++) { %>
+        <div class="taskBlock">
+          <h2>
+            <%= tasks[i].task %>
+          </h2>
+          <span class="status">
+            <i class="fas fa-check checkMark"></i>
+            <i class="fas fa-times xMark"></i>
+          </span>
+        </div>
+      <% } %>
+    </div>
+
+  </body>
+</html>
