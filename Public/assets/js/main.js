@@ -3,12 +3,12 @@ $(document).ready(function() {
   $('form').on('submit', function(){
 
       var task = $('form').serializeArray()[0].value;
-      var todo = {task: task};
+      var item = {task: task};
 
       $.ajax({
         type: 'POST',
         url: '/',
-        data: todo,
+        data: item,
         success: function(data){
           location.reload();
         }
@@ -25,7 +25,7 @@ $(document).ready(function() {
     // Grandparent -> h2
     var task = $(this).parent().parent().find("h2");
 
-    // Replace spaces with '-'
+    // Replace spaces with ''
     var task = task.text().replace(/ /g, "")
 
     $.ajax({
@@ -33,7 +33,6 @@ $(document).ready(function() {
       url: '/' + task,
       success: function(data){
         location.reload();
-        console.log(task);
       }
     });
   });

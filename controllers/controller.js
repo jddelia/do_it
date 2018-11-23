@@ -15,16 +15,14 @@ module.exports = function(app) {
   });
 
   app.post('/', urlencodedParser, function(req, res) {
-    console.log(req.body)
     tasks.push({task: req.body.task})
     res.render('todo', {tasks: tasks});
   });
 
   app.delete('/:task', function(req, res) {
-    tasks = tasks.filter(function(todo) {
-      return todo.task.replace(/ /g, '') !== req.params.task;
+    tasks = tasks.filter(function(list) {
+      return list.task.replace(/ /g, '') !== req.params.task;
     })
-    console.log(tasks)
     res.json(tasks);
   });
 
