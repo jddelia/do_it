@@ -2,6 +2,8 @@ let express = require('express');
 let controller = require('./controllers/controller');
 let compression = require('compression');
 let helmet = require('helmet');
+let mongoDB = 'mongodb://test:test123@ds121262.mlab.com:21262/doit'
+mongoDB = process.env.MONGODB_URI || 'mongodb://test:test123@ds121262.mlab.com:21262/doit'
 
 let app = express();
 
