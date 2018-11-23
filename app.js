@@ -21,4 +21,4 @@ app.use('/assets', express.static('./Public/assets'));
 controller(app)
 
 // Port
-app.listen(3000);
+app.listen(process.env.PORT || 5000);
